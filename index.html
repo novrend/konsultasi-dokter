@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://codyhouse.co/demo/contact-form/css/reset.css"> 
+	<link rel="stylesheet" href="https://codyhouse.co/demo/contact-form/css/style.css"> 
+	<title>Konsultasi Dokter Spesialis</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="cd-form floating-labels">
+		<select id="list-sp" onchange="showHideInput(this)"></select>
+		<div id="show"></div>
+		<div id="jam"></div>
+		<input id="submit" type="submit" onclick="submit()" value="Submit">
+	</div>
+	<div class="container">
+		<table id="jadwal"></table>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
