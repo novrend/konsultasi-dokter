@@ -12,6 +12,22 @@ body {
   background-attachment: fixed;
 }
 
+select {
+  background: linear-gradient(45deg, #A5C9CA, #A5C9CA);
+}
+
+button {
+  background-color: #3AB4F2;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .container {
   position: absolute;
   left: 50%;

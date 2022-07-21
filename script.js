@@ -127,7 +127,9 @@ function showJadwal() {
 	let i = 1
 	for (schedule of jadwal) {
 		schedule[0] = i
-		document.getElementById('jadwal').innerHTML += `<td id="${i}">${i}</td><td>${schedule[1]}</td><td>${schedule[2]}</td><td>${schedule[3]}</td><td><button onclick="edit(${i})">Edit</button><button onclick="hapus(${i})">Delete</button></td>`
+		// let button = `<button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="edit(${i})"><i class="fa fa-edit"></i></button></li><li class="list-inline-item"><button onclick="hapus(${i})" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>`
+		// document.getElementById('jadwal').innerHTML += `<td id="${i}">${i}</td><td>${schedule[1]}</td><td>${schedule[2]}</td><td>${schedule[3]}</td><td>${button}</td>`
+		document.getElementById('jadwal').innerHTML += `<td id="${i}">${i}</td><td>${schedule[1]}</td><td>${schedule[2]}</td><td>${schedule[3]}</td><td><button onclick="edit(${i})">Edit</button>&nbsp;<button onclick="hapus(${i})">Delete</button></td>`
 		i++
 	}
 }
