@@ -12,6 +12,24 @@ body {
   background-attachment: fixed;
 }
 
+.out {
+    width: 8%;
+    height: 40px;
+    margin: 10px 85% ;
+    justify-content: center;
+    display: block;
+    color: #fff;
+  background: #9285ac;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
 select {
   background: linear-gradient(45deg, #A5C9CA, #A5C9CA);
 }

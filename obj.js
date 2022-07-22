@@ -1,3 +1,7 @@
+let logins = [
+    ['ihza','a'],
+    ['ricard','a']
+]
 let obj = {
     Akupuntur: [
         {
