@@ -74,3 +74,17 @@ th {
 thead th {
     background-color: #55608f;
 }
+
+h1{
+  text-align: center;
+  color: white;
+  font-size: 24pt;
+  font-weight: bold;
+  /* border: 2px solid #fff; */
+}
+
+h2{
+  text-align: center;
+  color: white;
+  font-size: 14pt;
+}

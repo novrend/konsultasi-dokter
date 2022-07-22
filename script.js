@@ -134,11 +134,8 @@ function change(no) {
 function login() {
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
-    console.log(email,password)
     for (let key of logins) {
-        console.log(key)
         if (key[0] === email && key[1] === password) {
-            console.log(true)
             localStorage.setItem('login', key[0])
             break
         } else {
@@ -154,6 +151,8 @@ function logout() {
 function checks() {
     if (!localStorage.getItem('login')) {
        window.location.href = "login.html"
+    } else {
+    	document.getElementById('intro').innerHTML = `Halo ${localStorage.getItem('login')}, Welcome to Hackpital`
     }
 }
 listSp()
