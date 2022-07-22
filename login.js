@@ -1,5 +1,5 @@
 function login() {
-    let email = document.getElementById('email').value
+    let email = document.getElementById('username').value
     let password = document.getElementById('password').value
     for (let key of logins) {
         if (key[0] === email && key[1] === password) {
@@ -7,6 +7,9 @@ function login() {
             break
         } else {
             document.getElementById('status-login').innerHTML = "Email/Password Salah!"
+            setTimeout(function () {
+                document.getElementById('status-login').innerHTML = ''
+            }, 1000)
         }
     }
     checks()
@@ -21,5 +24,8 @@ function signup() {
     let pwd = document.getElementById('pwd').value
     logins.push([user,pwd])
     document.getElementById('status-signup').innerHTML = "Register Berhasil!"
+    setTimeout(function () {
+        document.getElementById('status-signup').innerHTML = ''
+    }, 1000)
 }
 checks()

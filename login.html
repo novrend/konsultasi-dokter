@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>login</title>
+	<title>login / sign up</title>
 	<link rel="stylesheet" type="text/css" href="login.css">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -10,14 +10,14 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input id="user" type="email" placeholder="Username" required="">
+            <input id="user" type="text" placeholder="Username" required="">
             <input id="pwd" type="password" placeholder="Password" required="">
             <button onclick="signup()">Sign up</button>
             <div id="status-signup"></div>
         </div>
 		<div class="login">
 			<label for="chk" aria-hidden="true">Login</label>
-			<input id="email" type="text" placeholder="Username" required="">
+			<input id="username" type="text" placeholder="Username" required="">
 			<input id="password" type="password" placeholder="Password" required="">
 			<button onclick="login()">Login</button>
             <div id="status-login"></div>
