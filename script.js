@@ -21,7 +21,7 @@ function getJadwal(input) {
     return result
 }
 function listSp() {
-	document.getElementById('list-sp').innerHTML = `<option on>Pilih spesialis</option>`
+	document.getElementById('list-sp').innerHTML = `<option>Pilih spesialis</option>`
 	document.getElementById('show').innerHTML = ''
 	document.getElementById('jam').innerHTML = ''
 	for (let key in obj) {
@@ -42,11 +42,6 @@ function listSp() {
 			</div>`
 			let schedule = getJadwal(keys.jadwal)
 			for (let waktu of schedule) {
-				let status = false
-				if (!jadwal.length) {
-					jadwal = [[0,0,0]]
-					status = true
-				}
 				let duplicate = false
 				for (let check of jadwal) {
 					if (check[2] == keys.nama && waktu == check[3]) {
@@ -56,9 +51,6 @@ function listSp() {
 				}
 				if (!duplicate) {
 					document.getElementById(`list-waktu-dokter-${keys.nama}`).innerHTML += `<option value="${waktu}">${waktu}</option>`
-				}
-				if (status) {
-					jadwal = []
 				}
 			}
 		}
@@ -95,17 +87,13 @@ function showHideWaktu(sel) {
 }
 function submit() {
 	let spesialis = document.querySelector('#list-sp').value
-	let dokter,waktu
-	for (let key in obj) {
-        if (key === spesialis) {
-        	dokter = document.querySelector(`#list-dokter-${key}`).value
-        	waktu = document.getElementById(`list-waktu-dokter-${dokter}`).value
-        	break
-        }
-	}
-	let no = jadwal.length+1
-	jadwal.push([no,spesialis,dokter,waktu])
-	listSp()
+    let dokter = document.querySelector(`#list-dokter-${spesialis}`).value
+    let waktu = document.getElementById(`list-waktu-dokter-${dokter}`).value
+    if (waktu !== 'pilih waktu') {
+		let no = jadwal.length+1
+		jadwal.push([no,spesialis,dokter,waktu])
+		listSp()
+    }
 }
 function edit(no) {
 	document.getElementById("submit").value = "Edit"
@@ -127,8 +115,6 @@ function showJadwal() {
 	let i = 1
 	for (schedule of jadwal) {
 		schedule[0] = i
-		// let button = `<button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="edit(${i})"><i class="fa fa-edit"></i></button></li><li class="list-inline-item"><button onclick="hapus(${i})" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>`
-		// document.getElementById('jadwal').innerHTML += `<td id="${i}">${i}</td><td>${schedule[1]}</td><td>${schedule[2]}</td><td>${schedule[3]}</td><td>${button}</td>`
 		document.getElementById('jadwal').innerHTML += `<td id="${i}">${i}</td><td>${schedule[1]}</td><td>${schedule[2]}</td><td>${schedule[3]}</td><td><button onclick="edit(${i})">Edit</button>&nbsp;<button onclick="hapus(${i})">Delete</button></td>`
 		i++
 	}
@@ -137,8 +123,10 @@ function change(no) {
 	let spesialis = document.querySelector('#list-sp').value
 	let dokter = document.querySelector(`#list-dokter-${spesialis}`).value
 	let waktu = document.getElementById(`list-waktu-dokter-${dokter}`).value
-	jadwal[no-1] = [no,spesialis,dokter,waktu]
-	listSp()
+	if (waktu !== 'pilih waktu') {
+		jadwal[no-1] = [no,spesialis,dokter,waktu]
+		listSp()
+	}
 }
 let obj = {
 	Akupuntur: [
