@@ -35,6 +35,7 @@ button {
 }
 
 table {
+  margin-bottom: 50px;
   position: relative;
   width: 800px;
   border-collapse: collapse;
